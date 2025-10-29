@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +7,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
-
 <body>
 
     <header class="fixed bg-[white] top-0 w-full py-[20px]">
         <div class="container mx-auto flex items-center justify-between px-[30px]">
-            <input class="max-w-[550px] w-full p-[10px] border-[1px] border-[silver] rounded-[10px] outline-none"
+            <input id="search-input" class="max-w-[550px] w-full p-[10px] border-[1px] border-[silver] rounded-[10px] outline-none"
                 type="search" placeholder="Studentlarni qidirish">
             <select class="max-w-[250px] w-full p-[10px] border-[1px] border-[silver] rounded-[10px] outline-none">
                 <option value="Manzilni tanlang">Manzilni tanlang</option>
@@ -23,7 +21,8 @@
                 <option value="Sirdaryo">Sirdaryo</option>
             </select>
             <div class="max-w-[400px] w-full flex items-center gap-[30px]">
-                <select class="max-w-[200px] w-full p-[10px] border-[1px] border-[silver] rounded-[10px] outline-none">
+                <select id="selected-filter" class="max-w-[200px] w-full p-[10px] border-[1px] border-[silver] rounded-[10px] outline-none">
+                    <option value="Guruhlar">Guruhlar</option>
                     <option value="N2">N2</option>
                     <option value="N3">N3</option>
                     <option value="N4">N4</option>
@@ -35,7 +34,7 @@
             </div>
         </div>
     </header>
-
+  
     <main class="mt-[80px]">
         <section>
             <div class="container mx-auto p-[30px]">
@@ -61,18 +60,17 @@
             </div>
         </section>
 
-
         <div id="outer-modal"
             class="fixed hidden bg-[red]/20 top-0 w-full h-full z-[20] flex items-center justify-center">
             <div id="inner-modal"
                 class="max-w-[400px] w-full p-[40px] bg-[white] rounded-[20px] flex flex-col gap-[20px]">
                 <h1>Student Qo'shish</h1>
                 <form id="form" class="flex flex-col gap-[20px] w-full">
-                    <input required class="w-full p-[10px] border-[1px] border-[silver] rounded-[10px] outline-none"
+                    <input id="ism" required class="w-full p-[10px] border-[1px] border-[silver] rounded-[10px] outline-none"
                         type="text" placeholder="Ism kiriting">
-                    <input required class="w-full p-[10px] border-[1px] border-[silver] rounded-[10px] outline-none"
+                    <input id="fam" required class="w-full p-[10px] border-[1px] border-[silver] rounded-[10px] outline-none"
                         type="text" placeholder="Familiya kiriting">
-                    <select required
+                    <select id="addres" required
                         class="w-full p-[10px] border-[1px] border-[silver] rounded-[10px] outline-none">
                         <option value="Manzilni tanlang">Manzilni tanlang</option>
                         <option value="Buxoro">Buxoro</option>
@@ -80,7 +78,7 @@
                         <option value="Toshkent">Toshkent</option>
                         <option value="Sirdaryo">Sirdaryo</option>
                     </select>
-                    <select required class="w-full p-[10px] border-[1px] border-[silver] rounded-[10px] outline-none">
+                    <select id="group" required class="w-full p-[10px] border-[1px] border-[silver] rounded-[10px] outline-none">
                         <option value="N2">N2</option>
                         <option value="N3">N3</option>
                         <option value="N4">N4</option>
@@ -92,13 +90,14 @@
                     </div>
                     <button type="submit"
                         class="w-full p-[10px] border-[1px] rounded-[10px] bg-[green]/75 text-[white] font-bold text-[18px] outline-none">Student
-                        qo'shish </button>
+                        <span id="change-btn">qo'shish</span> </button>
                 </form>
             </div>
         </div>
     </main>
 
     <script src="/js/main.js"></script>
+    <script src="/js/search.js"></script>
 </body>
 
 </html>
